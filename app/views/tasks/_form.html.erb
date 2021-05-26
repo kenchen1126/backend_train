@@ -8,29 +8,29 @@
 <% end %>
   <div>
     <%= f.label :name, '任務名稱' %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, id: "task_name" %>
   </div>
   <div>
     <%= f.label :description, '任務內容' %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, id: "task_description" %>
   </div>
   <div>
     <%= f.label :start_at %>
-    <%= f.datetime_field :start_at %>
+    <%= f.datetime_field :start_at, id: "task_start" %>
   </div>
   <div>
     <%= f.label :end_at %>
-    <%= f.datetime_field :end_at %>
+    <%= f.datetime_field :end_at, id: "task_end" %>
   </div>
   <div>
     <%= f.label :status %>
-    <%= f.select :status, Task.statuses.keys %>
+    <%= f.select :status, Task.statuses.keys, id: "task_status" %>
   </div>
   <div>
     <%= f.label :priority %>
-    <%= f.select :priority, Task.priorities.keys %>
+    <%= f.select :priority, Task.priorities.keys, id: "task_priority" %>
   </div>
   <div>
-    <%= f.submit '送出' %>
+    <%= f.submit '提交' %>
   </div>
 <% end %>
