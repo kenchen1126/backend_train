@@ -61,7 +61,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  #solute WebDriver::Error use chrome
+  #solve WebDriver::Error use chrome
   require "selenium/webdriver"
 
   Capybara.register_driver :chrome do |app|
