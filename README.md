@@ -1,4 +1,4 @@
-![](/ERB.jpg)
+![](/public/ERB.jpg)
 
 ## User model
 | 欄位 | 類別型態 |
