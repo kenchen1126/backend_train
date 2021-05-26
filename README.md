@@ -1,25 +1,35 @@
-# README
+![](/ERB.jpg)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## User model
+| 欄位 | 類別型態 |
+| :------: | :------: | 
+| id       | integer    |
+| name     | string     |
+| email    | string     |
+| password | string     |
 
-Things you may want to cover:
 
-* Ruby version
+## Task model
+| 欄位 | 類別型態 |
+| :------: | :------: | 
+| id       | integer    |
+| name     | string     |
+| description| string   |
+| priority | string     |
+| status   | string     |
+| start_at | datetime   |
+| end_at   | datetime   |
+| user_id  | integer    |
 
-* System dependencies
+## Tag model
+| 欄位 | 類別型態 |
+| :------: | :------: | 
+| id       | integer    |
+| name     | string     |
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# backend_train
+## Tagging model
+| 欄位 | 類別型態 |
+| :------: | :------: | 
+| id       | integer  |
+| task_id  | integer  |
+| tag_id   | integer  |
