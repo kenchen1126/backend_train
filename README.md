@@ -15,8 +15,8 @@
 | id       | integer    |
 | name     | string     |
 | description| string   |
-| priority | string     |
-| status   | string     |
+| priority | integer    |
+| status   | integer    |
 | start_at | datetime   |
 | end_at   | datetime   |
 | user_id  | integer    |
