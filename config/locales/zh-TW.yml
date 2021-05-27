@@ -1,0 +1,28 @@
+"zh-TW":
+  activerecord:
+    attributes:
+      task:
+        status:
+          pending: 待辦
+          in_progress: 進行中
+          done: 完成
+        priority:
+          low: 低
+          medium: 中
+          high: 高
+  button:
+    submit: 提交
+  task:
+    task_list: 任務列表
+    create_task: 新增任務       
+    edit_task: 修改
+    delete_task: 刪除 
+    name: 任務名稱
+    description: 任務描述
+    start_at: 開始時間
+    end_at: 結束時間
+    status: 狀態
+    priority: 優先度     
+    low: 低
+    medium: 中
+    high: 高
