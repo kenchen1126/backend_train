@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
-  before_action :find_task, only: [:show, :edit, :update, :destory]
+  before_action :find_task, only: [:show, :edit, :update, :destroy]
   def index
-    @tasks = Task.all.order(create_at: :desc)
+    @tasks = Task.all.order(created_at: :desc)
   end
 
   def show
@@ -14,11 +14,11 @@ class TasksController < ApplicationController
   def create
     task = Task.new(task_params)
     if task.save
-      flash[:notice] = "成功建立任務"
+      flash[:notice] = I18n.t("task.create_success")
       redirect_to tasks_path
     else
       render :new
-      flash[:notice] = "任務建立失敗"
+      flash[:notice] = I18n.t("task.create_failed")
     end
   end
 
@@ -27,19 +27,19 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      flash[:notice] = "成功修改任務"
+      flash[:notice] = I18n.t("task.edit_success")
       redirect_to tasks_path
     else
       render :edit 
-      flash[:notice] = "任務修改失敗"
+      flash[:notice] = I18n.t("task.edit_failed")
     end
   end
 
   def destroy
     if @task.destroy
-      flash[:notice] = "任務已刪除"
+      flash[:notice] = I18n.t("task.delete_success")
     else
-      flash[:notice] = "任務刪除失敗"
+      flash[:notice] = I18n.t("task.delete_failed")
     end
     redirect_to tasks_path
   end
