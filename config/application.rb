@@ -13,8 +13,10 @@ module BackendTrain
 
     # config default language 	
     config.i18n.default_locale = 'zh-TW'
+   
+    # adjust time zone
+    config.time_zone = "Taipei"
 
-    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
