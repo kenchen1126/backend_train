@@ -1,4 +1,4 @@
 class Task < ApplicationRecord
-  enum status: { pending: 1, in_progress: 2, done: 3 }
-  enum priority: { low: 1, medium: 2, high: 3 }
+  enum status: [task_status_enum(:pending), task_status_enum(:in_progress), task_status_enum(:done) ]
+  enum priority: [task_priority_enum(:low), task_priority_enum(:medium), task_priority_enum(:high) ]
 end
