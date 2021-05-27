@@ -80,3 +80,9 @@ RSpec.configure do |config|
 
   Capybara.javascript_driver = :headless_chrome
 end
+
+private
+
+def task_enum(enum_name, enum_value)
+  I18n.t("activerecord.attributes.task.#{enum_name}.#{enum_value}")
+end

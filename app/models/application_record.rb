@@ -8,3 +8,4 @@ class ApplicationRecord < ActiveRecord::Base
     I18n.t("activerecord.attributes.task.priority.#{enum_value}")
   end
 end
+
