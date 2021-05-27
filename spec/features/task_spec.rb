@@ -8,8 +8,8 @@ RSpec.feature "Tasks", type: :feature, js: true do
     find('a', text: '新增任務').click 
     fill_in "task_name", with: "測試任務"
     fill_in "task_description", with: "test"
-    select "pending", :from => "task_status"
-    select "low", :from => "task_priority"
+    select task_enum(:status, :pending), :from => "task_status"
+    select task_enum(:priority, :low), :from => "task_priority"
     click_button "提交"
   end
 
@@ -25,8 +25,8 @@ RSpec.feature "Tasks", type: :feature, js: true do
 
     expect(page).to have_content "測試任務"
     expect(page).to have_content "test"
-    expect(page).to have_content "pending"
-    expect(page).to have_content "low"
+    expect(page).to have_content task_enum(:status, :pending)
+    expect(page).to have_content task_enum(:priority, :low)
   end
 
   scenario "Task can be edited" do
