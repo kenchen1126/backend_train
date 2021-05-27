@@ -1,11 +1,10 @@
 class TasksController < ApplicationController
-
+  before_action :find_task, only: [:show, :edit, :update, :destroy]
   def index
-    @tasks = Task.all
+    @tasks = Task.all.order(created_at: :desc)
   end
 
   def show
-    @task = Task.find(params[:id])
   end
 
   def new
@@ -15,35 +14,32 @@ class TasksController < ApplicationController
   def create
     task = Task.new(task_params)
     if task.save
-      flash[:notice] = "成功建立任務"
+      flash[:notice] = I18n.t("task.create_success")
       redirect_to tasks_path
     else
       render :new
-      flash[:notice] = "任務建立失敗"
+      flash[:notice] = I18n.t("task.create_failed")
     end
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def update
-    @task = Task.find(params[:id])
     if @task.update(task_params)
-      flash[:notice] = "成功修改任務"
+      flash[:notice] = I18n.t("task.edit_success")
       redirect_to tasks_path
     else
       render :edit 
-      flash[:notice] = "任務修改失敗"
+      flash[:notice] = I18n.t("task.edit_failed")
     end
   end
 
   def destroy
-    @task = Task.find(params[:id])
     if @task.destroy
-      flash[:notice] = "任務已刪除"
+      flash[:notice] = I18n.t("task.delete_success")
     else
-      flash[:notice] = "任務刪除失敗"
+      flash[:notice] = I18n.t("task.delete_failed")
     end
     redirect_to tasks_path
   end
@@ -52,5 +48,9 @@ class TasksController < ApplicationController
   
   def task_params
     params.require(:task).permit(:name, :description, :priority, :status, :start_at, :end_at)
+  end
+
+  def find_task
+    @task = Task.find(params[:id])
   end
 end

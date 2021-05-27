@@ -79,6 +79,8 @@ RSpec.configure do |config|
   end
 
   Capybara.javascript_driver = :headless_chrome
+
+  config.include FactoryBot::Syntax::Methods
 end
 
 private
