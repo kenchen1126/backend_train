@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :tasks do
+  factory :task do
     name {Faker::Lorem.word}
     description {Faker::Lorem.paragraph}
     start_at {Faker::Time.backward(days: 2, period: :morning)}
