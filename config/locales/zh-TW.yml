@@ -32,6 +32,7 @@
     delete_success: 任務已刪除
     delete_failed: 任務刪除失敗
     # 任務欄位
+    id: 任務ID
     name: 任務名稱
     description: 任務描述
     start_at: 開始時間
