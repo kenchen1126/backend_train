@@ -1,11 +1,35 @@
 <h1><%= t("task.task_list") %></h1>
 <%= link_to t("task.create_task"), new_task_path %>
-<div class="task_section">
-  <% @tasks.each do |task| %>
-    <div class="task_item">
-      <%= link_to task.name, task_path(task.id) %>
-      <%= link_to t("task.edit_task"), edit_task_path(task.id) %>
-      <%= link_to t("task.delete_task"), task_path(task.id), method: "delete" %>
-    </div>
-  <% end %>
+<div>
+<%= sort_link(@q, :end_at, t("task.end_at"), default_order: :desc) %>
+<%= sort_link(@q, :end_at, t("task.create_at"), default_order: :desc) %>
+  <%= sort_link(@q, :id, t("task.id"), default_order: :desc) %>
 </div>
+<table>
+    <thead>
+        <tr>
+          <th><%= t("task.name") %></th>
+          <th><%= t("task.priority") %></th>
+          <th><%= t("task.status") %></th>
+          <th><%= t("task.start_at") %></th>
+          <th><%= t("task.end_at") %></th>
+        </tr>
+    </thead>
+  <div class="task_section">
+    <% @tasks.each do |task| %>
+      <tbody>
+          <tr>
+            <td><%= link_to task.name, task_path(task.id) %></td>
+            <td><%= task.priority %></td>
+            <td><%= task.status %></td>
+            <td><%= task.start_at %></td>
+            <td><%= task.end_at %></td>
+            <td>
+              <%= link_to t("task.edit_task"), edit_task_path(task.id) %>
+              <%= link_to t("task.delete_task"), task_path(task.id), method: "delete" %>
+            </td>
+          </tr>
+      </tbody>
+    <% end %>
+  </div>
+</table>

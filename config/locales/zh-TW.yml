@@ -32,12 +32,14 @@
     delete_success: 任務已刪除
     delete_failed: 任務刪除失敗
     # 任務欄位
+    id: 任務ID
     name: 任務名稱
     description: 任務描述
     start_at: 開始時間
     end_at: 結束時間
     status: 狀態
-    priority: 優先度     
+    priority: 優先度   
+    create_at: 建立時間  
     low: 低
     medium: 中
     high: 高

@@ -25,9 +25,14 @@ en:
     delete_success: Task deleted
     delete_failed: Failed to delete task
     # 任務欄位
+    id: Task ID
     name: Name
     description: Description
     start_at: Start at
     end_at: End at
     status: Status
-    priority: Priority    
+    priority: Priority   
+    create_at: Create at 
+    low: low
+    medium: medium
+    high: high
