@@ -12,8 +12,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    task = Task.new(task_params)
-    if task.save
+    @task = Task.new(task_params)
+    if @task.save
       flash[:notice] = I18n.t("task.create_success")
       redirect_to tasks_path
     else
