@@ -25,7 +25,7 @@ module BackendTrain
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.generators do |g|
-      g.test_framework :rspec, :fixture => true, :views => false, :fixture_replacement => :factory_girl
+      g.test_framework :rspec, :fixture => true, :views => false, :fixture_replacement => :factory_bot
       g.fixture_replacement :factory_bot, :dir => "spec/factories"
     end
   end
