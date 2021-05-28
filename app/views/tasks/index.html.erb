@@ -2,8 +2,9 @@
 <%= link_to t("task.create_task"), new_task_path %>
 <div>
 <%= sort_link(@q, :end_at, t("task.end_at"), default_order: :desc) %>
-<%= sort_link(@q, :end_at, t("task.create_at"), default_order: :desc) %>
-  <%= sort_link(@q, :id, t("task.id"), default_order: :desc) %>
+<%= sort_link(@q, :create_at, t("task.create_at"), default_order: :desc) %>
+  
+<%= sort_link(@q, :id, t("task.id"), default_order: :desc) %>
 </div>
 <table>
     <thead>
