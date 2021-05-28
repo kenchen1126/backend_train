@@ -31,7 +31,8 @@ en:
     start_at: Start at
     end_at: End at
     status: Status
-    priority: Priority    
+    priority: Priority   
+    create_at: Create at 
     low: low
     medium: medium
     high: high
