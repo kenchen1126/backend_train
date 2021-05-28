@@ -14,9 +14,17 @@ en:
     submit: Submit
   task:
     task_list: Task List
-    create_task: Create task      
+    # CRUD
+    create_task: Create task   
+    create_success: Create task successfully
+    create_failed: Failed to create task
     edit_task: Edit
+    edit_success: Edit task successfully
+    edit_failed: Failed to edit task
     delete_task: Destroy  
+    delete_success: Task deleted
+    delete_failed: Failed to delete task
+    # 任務欄位
     name: Name
     description: Description
     start_at: Start at

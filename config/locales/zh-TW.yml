@@ -10,13 +10,28 @@
           low: 低
           medium: 中
           high: 高
+
   button:
     submit: 提交
+
+  error:
+    format: "%{attribute} %{message}"
+    message:
+      
+
   task:
     task_list: 任務列表
-    create_task: 新增任務       
+    # CRUD
+    create_task: 新增任務  
+    create_success: 成功建立任務
+    create_failed: 任務建立失敗
     edit_task: 修改
-    delete_task: 刪除 
+    edit_success: 成功修改任務
+    edit_failed: 任務修改失敗
+    delete_task: 刪除
+    delete_success: 任務已刪除
+    delete_failed: 任務刪除失敗
+    # 任務欄位
     name: 任務名稱
     description: 任務描述
     start_at: 開始時間
@@ -26,3 +41,4 @@
     low: 低
     medium: 中
     high: 高
+  

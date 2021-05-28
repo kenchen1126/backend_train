@@ -1,9 +1,11 @@
 <h1><%= t("task.task_list") %></h1>
 <%= link_to t("task.create_task"), new_task_path %>
-<% @tasks.each do |task| %>
-  <div>
-    <%= link_to task.name, task_path(task.id) %>
-    <%= link_to t("task.edit_task"), edit_task_path(task.id) %>
-    <%= link_to t("task.delete_task"), task_path(task.id), method: "delete" %>
-  </div>
-<% end %>
+<div class="task_section">
+  <% @tasks.each do |task| %>
+    <div class="task_item">
+      <%= link_to task.name, task_path(task.id) %>
+      <%= link_to t("task.edit_task"), edit_task_path(task.id) %>
+      <%= link_to t("task.delete_task"), task_path(task.id), method: "delete" %>
+    </div>
+  <% end %>
+</div>
