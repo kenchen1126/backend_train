@@ -39,7 +39,7 @@
     end_at: 結束時間
     status: 狀態
     priority: 優先度   
-    create_at: 建立時間  
+    created_at: 建立時間  
     low: 低
     medium: 中
     high: 高

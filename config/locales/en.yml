@@ -32,7 +32,7 @@ en:
     end_at: End at
     status: Status
     priority: Priority   
-    create_at: Create at 
+    created_at: Create at 
     low: low
     medium: medium
     high: high
