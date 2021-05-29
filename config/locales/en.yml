@@ -36,3 +36,14 @@ en:
     low: low
     medium: medium
     high: high
+    
+  search:
+    submit_btn: Search
+
+  views:
+    pagination:
+      first: Frist page
+      last: Last page
+      previous: Previous
+      next: Next
+      truncate: ...
