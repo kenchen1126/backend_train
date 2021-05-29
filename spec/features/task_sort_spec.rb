@@ -8,11 +8,12 @@ RSpec.feature "TaskSorts", type: :feature, js: true do
         task_2 = create(:task, name: "task_2")
         task_3 = create(:task, name: "task_3", created_at: Faker::Time.backward(days: 20, period: :evening))
         visit root_path
+
       end
 
       scenario "Task can sort by created_at" do
         
-        find('.sort_link', text: I18n.t("task.create_at")).click
+        find('.sort_link', text: I18n.t("task.created_at")).click
         
         within "tbody:nth-child(2) td:nth-child(1)" do
           expect(page).to have_content "task_1"
