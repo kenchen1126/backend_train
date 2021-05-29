@@ -57,5 +57,7 @@ Ubuntu 18.04
 
 # 第四步
 完成部署
+
 ![](/public/deploydone.png)
+
 連結: [https://backendtrain.herokuapp.com/](https://backendtrain.herokuapp.com/)

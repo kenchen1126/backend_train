@@ -2,8 +2,9 @@
 <%= link_to t("task.create_task"), new_task_path %>
 <div>
 <%= sort_link(@q, :end_at, t("task.end_at"), default_order: :desc) %>
-<%= sort_link(@q, :end_at, t("task.create_at"), default_order: :desc) %>
-  <%= sort_link(@q, :id, t("task.id"), default_order: :desc) %>
+<%= sort_link(@q, :created_at, t("task.created_at"), default_order: :desc) %>
+  
+<%= sort_link(@q, :id, t("task.id"), default_order: :desc) %>
 </div>
 <table>
     <thead>
@@ -12,6 +13,7 @@
           <th><%= t("task.priority") %></th>
           <th><%= t("task.status") %></th>
           <th><%= t("task.start_at") %></th>
+          <th><%= t("task.created_at") %></th>
           <th><%= t("task.end_at") %></th>
         </tr>
     </thead>
@@ -23,6 +25,7 @@
             <td><%= task.priority %></td>
             <td><%= task.status %></td>
             <td><%= task.start_at %></td>
+            <td><%= task.created_at %></td>
             <td><%= task.end_at %></td>
             <td>
               <%= link_to t("task.edit_task"), edit_task_path(task.id) %>
