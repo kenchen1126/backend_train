@@ -43,6 +43,9 @@
     low: 低
     medium: 中
     high: 高
+    pending: 待辦
+    in_progress: 進行中
+    done: 完成
   
   search:
     submit_btn: 搜尋
