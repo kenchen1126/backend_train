@@ -33,12 +33,6 @@ en:
     status: Status
     priority: Priority   
     created_at: Create at 
-    low: Low
-    medium: Medium
-    high: High
-    pending: Pending
-    in_progress: In_progress
-    done: Done
-
-  search:
-    submit_btn: Search
+    low: low
+    medium: medium
+    high: high
