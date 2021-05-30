@@ -1,16 +1,28 @@
-<h1><%= @task.name %></h1>
-<div>
-  <%= @task.description %>
-</div>
-<div>
-  <%= @task.start_at %>
-</div>
-<div>
-  <%= @task.end_at %>
-</div>
-<div>
-  <%= @task.status %>
-</div>
-<div>
-  <%= @task.priority %>
+<div class="container">
+  <table class="table table-borderless table-hover w-auto">
+    <tr>
+      <th><%= t("task.name") %></th>
+      <td><%= @task.name %></td>
+    </tr>
+    <tr>
+      <th><%= t("task.description") %></th> 
+      <td><%= @task.description %></td>
+    </tr>
+    <tr>
+      <th><%= t("task.start_at") %></th>
+      <td><%= @task.start_at %></td>
+    </tr>
+    <tr>
+      <th><%= t("task.end_at") %></th>
+      <td><%= @task.end_at %></td>
+    </tr>
+    <tr>
+      <th><%= t("task.status") %></th>
+      <td><%= @task.status %></td>
+    </tr>
+    <tr>
+      <th><%= t("task.priority") %></th>
+      <td><%= @task.priority %></td>
+    </tr>
+  </table> 
 </div>
