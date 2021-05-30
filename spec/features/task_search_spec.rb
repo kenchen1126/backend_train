@@ -21,8 +21,10 @@ RSpec.feature "TaskSearches", type: :feature do
     
     context "By name" do
       scenario "Can only see specific-name task" do
-        find_field("q_name_cont").set("task_1")
-        click_button I18n.t("search.submit_btn")
+        within "div.main_search" do
+          find_field("q_name_cont").set("task_1")
+          click_button I18n.t("search.submit_btn")
+        end
 
         expect(page).to have_content "task_1"
         expect(page).to have_no_content "task_2"
@@ -32,22 +34,27 @@ RSpec.feature "TaskSearches", type: :feature do
 
     context "By status" do
       scenario "Can only see specific-status task" do
-        select task_enum(:status, :pending), :from => "q_status_eq"
-        click_button I18n.t("search.submit_btn")
-
+        within "div.main_search" do
+          select task_enum(:status, :pending), :from => "q_status_eq"
+          click_button I18n.t("search.submit_btn")
+        end
         expect(page).to have_content "task_1"
         expect(page).to have_no_content "task_2"
         expect(page).to have_no_content "task_3"
 
-        select task_enum(:status, :in_progress), :from => "q_status_eq"
-        click_button I18n.t("search.submit_btn")
+        within "div.main_search" do
+          select task_enum(:status, :in_progress), :from => "q_status_eq"
+          click_button I18n.t("search.submit_btn")
+        end
 
         expect(page).to have_no_content "task_1"
         expect(page).to have_content "task_2"
         expect(page).to have_no_content "task_3"
 
-        select task_enum(:status, :done), :from => "q_status_eq"
-        click_button I18n.t("search.submit_btn")
+        within "div.main_search" do
+          select task_enum(:status, :done), :from => "q_status_eq"
+          click_button I18n.t("search.submit_btn")
+        end
 
         expect(page).to have_no_content "task_1"
         expect(page).to have_no_content "task_2"
@@ -57,23 +64,29 @@ RSpec.feature "TaskSearches", type: :feature do
 
     context "By priority" do
       scenario "Can only see specific-priority task" do
-        select task_enum(:priority, :low), :from => "q_priority_eq"
-        click_button I18n.t("search.submit_btn")
+        within "div.main_search" do
+          select task_enum(:priority, :low), :from => "q_priority_eq"
+          click_button I18n.t("search.submit_btn")
+        end
 
         expect(page).to have_content "task_1"
         expect(page).to have_no_content "task_2"
         expect(page).to have_no_content "task_3"
 
-        select task_enum(:priority, :medium), :from => "q_priority_eq"
-        click_button I18n.t("search.submit_btn")
+        within "div.main_search" do
+          select task_enum(:priority, :medium), :from => "q_priority_eq"
+          click_button I18n.t("search.submit_btn")
+        end
 
         expect(page).to have_no_content "task_1"
         expect(page).to have_content "task_2"
         expect(page).to have_no_content "task_3"
 
-        select task_enum(:priority, :high), :from => "q_priority_eq"
-        click_button I18n.t("search.submit_btn")
-
+        within "div.main_search" do
+          select task_enum(:priority, :high), :from => "q_priority_eq"
+          click_button I18n.t("search.submit_btn")
+        end
+        
         expect(page).to have_no_content "task_1"
         expect(page).to have_no_content "task_2"
         expect(page).to have_content "task_3"
@@ -82,20 +95,24 @@ RSpec.feature "TaskSearches", type: :feature do
 
     context "By status and name and priority" do
       scenario "Can only see specific name, status and priority task" do
-        find_field("q_name_cont").set("task_1")
-        select task_enum(:status, :pending), :from => "q_status_eq"
-        select task_enum(:priority, :low), :from => "q_priority_eq"
-        click_button I18n.t("search.submit_btn")
+        within "div.main_search" do
+          find_field("q_name_cont").set("task_1")
+          select task_enum(:status, :pending), :from => "q_status_eq"
+          select task_enum(:priority, :low), :from => "q_priority_eq"
+          click_button I18n.t("search.submit_btn")
+        end
 
         expect(page).to have_content "task_1"
         expect(page).to have_no_content "task_2"
         expect(page).to have_no_content "task_3"
 
-        find_field("q_name_cont").set("task_2")
-        select task_enum(:status, :pending), :from => "q_status_eq"
-        select task_enum(:priority, :medium), :from => "q_priority_eq"
-        click_button I18n.t("search.submit_btn")
-
+        within "div.main_search" do  
+          find_field("q_name_cont").set("task_2")
+          select task_enum(:status, :pending), :from => "q_status_eq"
+          select task_enum(:priority, :medium), :from => "q_priority_eq"
+          click_button I18n.t("search.submit_btn")
+        end
+        
         expect(page).to have_no_content "task_1"
         expect(page).to have_no_content "task_2"
         expect(page).to have_no_content "task_3"
