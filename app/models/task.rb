@@ -5,4 +5,6 @@ class Task < ApplicationRecord
   enum priority: [task_priority_enum(:low), task_priority_enum(:medium), task_priority_enum(:high) ]
 
   paginates_per 30
+
+  belongs_to :user
 end
