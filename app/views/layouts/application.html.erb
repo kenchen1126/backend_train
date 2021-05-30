@@ -11,8 +11,10 @@
   </head>
 
   <body>
-    <%= notice %>
-    <div class="container">
+    <%= render 'share/navbar' %>
+    <%= render 'share/flash' %>
+
+    <div class="container main_bg">
       <%= yield %>
     </div>
   </body>
