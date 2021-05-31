@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
+  skip_before_action :set_ransack_obj, only: [:index]
+
   def index
-    @q = Task.ransack(params[:q])
+    @q = @current_user.tasks.includes(:user).ransack(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page])
   end
 
@@ -13,7 +15,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = @current_user.tasks.build(task_params)
     if @task.save
       flash[:notice] = I18n.t("task.create_success")
       redirect_to tasks_path

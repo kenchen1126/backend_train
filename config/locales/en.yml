@@ -40,6 +40,30 @@ en:
     in_progress: In progress
     done: Done 
     
+  user:
+    # CRUD
+    create_user: Create user  
+    create_success: Create user successfully
+    create_failed: Failed to create user
+    edit_user: Edit
+    edit_success: Edit user successfully
+    edit_failed: Failed to edit user
+    delete_task: Destroy
+    delete_success: User deleted
+    delete_failed: Failed to delete user
+    #欄位
+    id: User ID
+    name: Name
+    email: Email
+    password: Password
+  
+  session:
+    login: Login
+    logout: Logout
+    login_success: Login successfully
+    login_failed: email or password is wrong
+    logout_success: Logout
+
   search:
     submit_btn: Search
 

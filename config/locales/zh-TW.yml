@@ -47,6 +47,30 @@
     in_progress: 進行中
     done: 完成
   
+  user:
+    #CRUD
+    reate_user: 新增使用者  
+    create_success: 成功建立使用者
+    create_failed: 使用者建立失敗
+    edit_user: 修改
+    edit_success: 成功修改
+    edit_failed: 修改失敗
+    delete_task: 刪除
+    delete_success: 使用者已刪除
+    delete_failed: 使用者刪除失敗
+    #欄位
+    id: User ID
+    name: 名稱
+    email: 信箱
+    password: 密碼
+  
+  session:
+    login: 登入
+    logout: 登出
+    login_success: 登入成功
+    login_failed: 輸入錯誤
+    logout_success: 已登出
+
   search:
     submit_btn: 搜尋
 

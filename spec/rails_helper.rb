@@ -88,3 +88,10 @@ private
 def task_enum(enum_name, enum_value)
   I18n.t("activerecord.attributes.task.#{enum_name}.#{enum_value}")
 end
+
+def user_login(user)
+  visit login_path
+  fill_in "email_input", with: user.email
+  fill_in "password_input", with: user.password
+  click_button "提交"
+end
