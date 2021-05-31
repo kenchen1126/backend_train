@@ -41,6 +41,7 @@ en:
     done: Done 
     
   user:
+    # CRUD
     create_user: Create user  
     create_success: Create user successfully
     create_failed: Failed to create user
@@ -50,7 +51,12 @@ en:
     delete_task: Destroy
     delete_success: User deleted
     delete_failed: Failed to delete user
-  
+    #欄位
+    id: User ID
+    name: Name
+    email: Email
+    password: Password
+
   search:
     submit_btn: Search
 

@@ -48,6 +48,7 @@
     done: 完成
   
   user:
+    #CRUD
     reate_user: 新增使用者  
     create_success: 成功建立使用者
     create_failed: 使用者建立失敗
@@ -57,7 +58,12 @@
     delete_task: 刪除
     delete_success: 使用者已刪除
     delete_failed: 使用者刪除失敗
-    
+    #欄位
+    id: User ID
+    name: Name
+    email: Email
+    password: Password
+
   search:
     submit_btn: 搜尋
 
