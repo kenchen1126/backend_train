@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Task, type: :model do
   describe "Task validation" do
-    let(:user) {create(:user)}
-    let(:task) {user.tasks.create(name:"task_1")}
+    let(:task) {create(:task)}
     context "create task success" do
       it "valid successfully" do
         expect(task).to be_valid
