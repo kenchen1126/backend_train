@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
-  before_action :set_ransack_obj, only: [:new, :edit, :show]
+  skip_before_action :set_ransack_obj, only: [:index]
 
   def index
     @q = Task.includes(:user).ransack(params[:q])
