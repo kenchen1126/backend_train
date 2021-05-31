@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   skip_before_action :set_ransack_obj, only: [:index]
 
   def index
-    @q = Task.includes(:user).ransack(params[:q])
+    @q = @current_user.tasks.includes(:user).ransack(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page])
   end
 

@@ -62,7 +62,7 @@ en:
     logout: Logout
     login_success: Login successfully
     login_failed: email or password is wrong
-    logout: Logout
+    logout_success: Logout
 
   search:
     submit_btn: Search
