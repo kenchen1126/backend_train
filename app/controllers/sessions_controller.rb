@@ -6,11 +6,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    byebug
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       flash[:notice] = I18n.t("session.login_success")
-      redirect_to tasks_path(@user)
+      redirect_to tasks_path
     else
       flash[:notice] = I18n.t("session.login_failed")
       redirect_to login_path

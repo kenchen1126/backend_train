@@ -6,5 +6,6 @@ FactoryBot.define do
     end_at {Faker::Time.forward(days: 4, period: :evening)}
     priority {Task.priorities.values.sample}
     status {Task.statuses.values.sample}
+    association :user
   end
 end
