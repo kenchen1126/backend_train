@@ -1,14 +1,16 @@
 class SessionsController < ApplicationController
   skip_before_action :login_verify
+  before_action :find_user, only: [:create]
   def new
     @user = User.new
   end
 
   def create
-    if @user && @user.authenticate(params[:session][:password])
+    byebug
+    if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       flash[:notice] = I18n.t("session.login_success")
-      redirect_to user_tasks_path(@user)
+      redirect_to tasks_path(@user)
     else
       flash[:notice] = I18n.t("session.login_failed")
       redirect_to login_path
@@ -24,6 +26,6 @@ class SessionsController < ApplicationController
   private
 
   def find_user
-    @user = User.find_by(email: params[:session][:email])
+    @user = User.find_by(email: params[:user][:email])
   end
 end
