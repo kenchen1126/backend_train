@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_ransack_obj, only: [:new, :edit, :show]
+
   def index
-    @q = Task.include(:user).ransack(params[:q])
+    @q = Task.includes(:user).ransack(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page])
   end
 
@@ -48,7 +50,7 @@ class TasksController < ApplicationController
   private
   
   def task_params
-    params.require(:task).permit(:name, :description, :priority, :status, :start_at, :end_at)
+    params.require(:task).permit(:name, :description, :priority, :status, :start_at, :end_at, :user_id)
   end
 
   def find_task
