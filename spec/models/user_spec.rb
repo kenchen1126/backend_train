@@ -42,11 +42,11 @@ RSpec.describe User, type: :model do
         expect(user).to_not be_valid
         expect(user.errors.full_messages).to include "Password 不能為空白"
       end
-      it "is not valid with a password shorter than six" do
-        user.password = "12345"
-        expect(user).to_not be_valid
-        expect(user.errors.full_messages).to include "Password 過短（最短是 6 個字）"
-      end
+      # it "is not valid with a password shorter than six" do
+      #   user.password = "12345"
+      #   expect(user).to_not be_valid
+      #   expect(user.errors.full_messages).to include "Password 過短（最短是 6 個字）"
+      # end
 
     end
   end
