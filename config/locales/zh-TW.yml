@@ -49,7 +49,7 @@
   
   user:
     #CRUD
-    reate_user: 新增使用者  
+    create_user: 新增使用者  
     create_success: 成功建立使用者
     create_failed: 使用者建立失敗
     edit_user: 修改

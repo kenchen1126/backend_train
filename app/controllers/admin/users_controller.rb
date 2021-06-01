@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :find_user, only: [:show, :create, :update, :destroy]
+  before_action :find_user, only: [:show, :update, :destroy]
 
   def index
     @users = User.page(params[:page]).per(5)
@@ -19,7 +19,6 @@ class Admin::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = I18n.t("user.create_success")
-      session[:user_id] = @user.id
       redirect_to admin_users_path
     else
       render :new
