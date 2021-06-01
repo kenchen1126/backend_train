@@ -54,6 +54,7 @@
     delete_user: 刪除
     delete_success: 使用者已刪除
     delete_failed: 使用者刪除失敗
+    switch_authority: 切換權限
     #欄位
     id: User ID
     name: 名稱
@@ -61,9 +62,12 @@
     password: 密碼
     tasks_count: 任務數量
     created_at: 建立時間
+    authority: 權限
     #提示
     delete_confirm: 確定要刪除此使用者嗎?
-    no_authority: 權限不足
+    no_authority: 權限不足  
+    switch_authority_confirm: 確定要切換權限?
+
 
   session:
     login: 登入

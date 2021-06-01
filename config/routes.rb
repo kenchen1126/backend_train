@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
 
   namespace :admin do
-    resources :users
+    resources :users do
+      member do
+        post "switch_authority"
+      end
+    end
   end
 end

@@ -2,6 +2,7 @@
 <%= link_to t("user.create_user"), new_admin_user_path, class: "new-link", class: "new-link btn btn-primary" %>
 <table class="table table-striped">
   <thead>
+    <td><%= t("user.authority") %></td>
     <td><%= t("user.name") %></td>
     <td><%= t("user.email") %></td>
     <td><%= t("user.created_at") %></td>
@@ -11,6 +12,9 @@
   <tbody>
     <% @users.each do |user|%>
       <tr id=<%= user.id %>>
+        <td>
+          <%= user.authority %>
+        </td>
         <td>
           <%= link_to user.name, admin_user_path(user) %>
         </td>
@@ -22,6 +26,9 @@
         </td>
         <td>
           <%= user.tasks.count %>
+        </td>
+        <td>
+        <%= link_to t("user.switch_authority"), switch_authority_admin_user_path(user.id), data: {method: "POST", confirm: t("user.switch_authority_confirm")} %>
         </td>
         <td>
           <%= link_to t("user.edit_user"), edit_admin_user_path(user) %>

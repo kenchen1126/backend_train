@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :find_user, only: [:show, :update, :destroy, :edit]
+  before_action :find_user, only: [:show, :update, :destroy, :edit, :switch_authority]
   before_action :check_authority
   def index
     @users = User.page(params[:page]).per(5)
@@ -41,6 +41,16 @@ class Admin::UsersController < ApplicationController
     else
       flash[:notice] = I18n.t("user.delete_failed")
     end
+    redirect_to admin_users_path
+  end
+
+  def switch_authority
+    if @user.authority == "admin"
+      User.admin.size <= 1 ? @user : @user.authority = "member"
+    else
+      @user.authority = "admin"
+    end
+    @user.save!
     redirect_to admin_users_path
   end
 

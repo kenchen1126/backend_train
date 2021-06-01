@@ -52,6 +52,7 @@ en:
     delete_user: Destroy
     delete_success: User deleted
     delete_failed: Failed to delete user
+    switch_authority: Switch authority
     #欄位
     id: User ID
     name: Name
@@ -59,9 +60,11 @@ en:
     password: Password
     tasks_count: Tasks count
     created_at: Create at
+    authority: Authority
     #提示
     delete_confirm: Are you sure to delete this user?
     no_authority: Insufficient permission
+    switch_authority_confirm: Are you sure to switch authority?
 
   session:
     login: Login
