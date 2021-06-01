@@ -13,12 +13,7 @@
 
   button:
     submit: 提交
-
-  error:
-    format: "%{attribute} %{message}"
-    message:
       
-
   task:
     task_list: 任務列表
     # CRUD
@@ -52,6 +47,7 @@
     create_user: 新增使用者  
     create_success: 成功建立使用者
     create_failed: 使用者建立失敗
+    edit: 編輯使用者
     edit_user: 修改
     edit_success: 成功修改
     edit_failed: 修改失敗

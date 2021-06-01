@@ -45,6 +45,7 @@ en:
     create_user: Create user  
     create_success: Create user successfully
     create_failed: Failed to create user
+    edit: Edit
     edit_user: Edit
     edit_success: Edit user successfully
     edit_failed: Failed to edit user

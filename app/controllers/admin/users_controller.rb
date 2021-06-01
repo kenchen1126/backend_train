@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :find_user, only: [:show, :update, :destroy]
+  before_action :find_user, only: [:show, :update, :destroy, :edit]
 
   def index
     @users = User.page(params[:page]).per(5)
@@ -27,7 +27,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-    if @user.update(task_params)
+    if @user.update(user_params)
       flash[:notice] = I18n.t("user.edit_success")
       redirect_to admin_users_path
     else
