@@ -45,10 +45,11 @@ en:
     create_user: Create user  
     create_success: Create user successfully
     create_failed: Failed to create user
+    edit: Edit
     edit_user: Edit
     edit_success: Edit user successfully
     edit_failed: Failed to edit user
-    delete_task: Destroy
+    delete_user: Destroy
     delete_success: User deleted
     delete_failed: Failed to delete user
     #欄位
@@ -56,7 +57,10 @@ en:
     name: Name
     email: Email
     password: Password
-  
+    tasks_count: Tasks count
+    created_at: Create at
+    delete_confirm: Are you sure to delete this user?
+
   session:
     login: Login
     logout: Logout
@@ -74,3 +78,5 @@ en:
       previous: Previous
       next: Next
       truncate: ...
+  
+    admin_page: Admin page
