@@ -8,8 +8,6 @@
     <%= f.select :status_eq, Task.statuses.to_a, {:include_blank => true}, class: "form-select-sm" %>
     <%= f.label :priority_eq, t("task.priority") %>
     <%= f.select :priority_eq, Task.priorities.to_a, {:include_blank => true}, class: "form-select-sm" %>
-    <%= f.label :tags_name_cont, t("tag") %>
-    <%= f.search_field :tags_name_cont%>
     <%= f.submit t("search.submit_btn"), class: "btn btn-secondary" %>
   <% end %>
 </div>
@@ -18,16 +16,13 @@
         <tr>
           <th scope="col"><%= t("task.name") %></th>
           <th scope="col">
-            <%= sort_link(@q, :priority, t("task.priority"), default_order: :desc) %>
+          <%= sort_link(@q, :priority, t("task.priority"), default_order: :desc) %>
           </th>
           <th scope="col">
-            <%= sort_link(@q, :status, t("task.status"), default_order: :desc) %>
+          <%= sort_link(@q, :status, t("task.status"), default_order: :desc) %>
           </th>
           <th scope="col">
-            <%= t("tag") %>
-          </th>
-          <th scope="col">
-            <%= sort_link(@q, :start_at, t("task.start_at"), default_order: :desc) %>
+          <%= sort_link(@q, :start_at, t("task.start_at"), default_order: :desc) %>
           </th>
           <th scope="col">
             <%= sort_link(@q, :created_at, t("task.created_at"), default_order: :desc) %>
@@ -45,11 +40,6 @@
             <td><%= link_to task.name, task_path(task.id) %></td>
             <td><%= task.priority %></td>
             <td><%= task.status %></td>
-            <td>
-              <% task.tags.each do |tag| %>
-                <%= tag.name %>
-              <% end %>
-            </td>
             <td><%= task.start_at.strftime("%B %d, %Y") if task.start_at.present?%></td>
             <td><%= task.created_at.strftime("%B %d, %Y") %></td>
             <td><%= task.end_at.strftime("%B %d, %Y") if task.end_at.present?%></td>

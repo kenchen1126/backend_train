@@ -1,12 +1,10 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
-  before_action :tags_collection, only: [:new, :edit]
   skip_before_action :set_ransack_obj, only: [:index]
 
   def index
     @q = @current_user.tasks.includes(:user).ransack(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page])
-
   end
 
   def show
@@ -14,7 +12,6 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
-
   end
 
   def create
@@ -53,27 +50,10 @@ class TasksController < ApplicationController
   private
   
   def task_params
-    params.require(:task).permit(:name,
-                                 :description, 
-                                 :priority, 
-                                 :status, 
-                                 :start_at, 
-                                 :end_at,
-                                 { tag_items: [] }
-                                 )
+    params.require(:task).permit(:name, :description, :priority, :status, :start_at, :end_at)
   end
 
   def find_task
     @task = Task.find(params[:id])
-  end
-
-  def tags_collection
-    @tags = []
-    @current_user.tasks.each do |task|
-      task.tags.each do |tag|
-        @tags << tag.name
-      end
-    end
-    @tags.uniq!
   end
 end
