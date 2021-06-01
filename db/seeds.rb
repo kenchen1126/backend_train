@@ -1,27 +1,31 @@
 require 'faker'
-# first user
-user = User.create(name: "Ken", email: "banacat@example.com", password: "banacat" )
-# 測試資料
-user.tasks.create(name: "吃飯",
+Task.create(name: "吃飯",
 description: Faker::Lorem.paragraph,
 start_at: Faker::Time.backward(days: 2, period: :morning),
 end_at: Faker::Time.forward(days: 4, period: :evening),
 priority: Task.priorities.values.sample,
 status: Task.statuses.values.sample
 )
-user.tasks.create(name: "做作業",
+Task.create(name: "做作業",
 description: Faker::Lorem.paragraph,
 start_at: Faker::Time.backward(days: 2, period: :morning),
 end_at: Faker::Time.forward(days: 4, period: :evening),
 priority: Task.priorities.values.sample,
 status: Task.statuses.values.sample
 )
-user.tasks.create(name: "玩電腦",
+Task.create(name: "玩電腦",
 description: Faker::Lorem.paragraph,
 start_at: Faker::Time.backward(days: 2, period: :morning),
 end_at: Faker::Time.forward(days: 4, period: :evening),
 priority: Task.priorities.values.sample,
 status: Task.statuses.values.sample
 )
-
-
+100.times do 
+  Task.create(name: Faker::Lorem.word,
+              description: Faker::Lorem.paragraph,
+              start_at: Faker::Time.backward(days: 2, period: :morning),
+              end_at: Faker::Time.forward(days: 4, period: :evening),
+              priority: Task.priorities.values.sample,
+              status: Task.statuses.values.sample
+  )
+end
