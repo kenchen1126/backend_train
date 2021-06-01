@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Admins", type: :feature do
-  let(:user) {create(:user)}
+  let(:user) {create(:user, authority: 1)}
   describe "User login" do
     before do  
       user_login(user)
