@@ -17,13 +17,13 @@ require("jquery");
 require("bootstrap");
 
 window.$ = $
-$(document).ready(function() {
+$(window).on('turbolinks:load', function(){
   $('select').select2({
-    tags: true,
-    tokenSeparators: [',', ' ']
-  }
-  );
-});
+      tags: true,
+      tokenSeparators: [',', ' ']
+    }
+    );
+})
 
 Rails.start()
 Turbolinks.start()

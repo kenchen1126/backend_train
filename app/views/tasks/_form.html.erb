@@ -6,7 +6,7 @@
     <% end %>
   </ul>
 <% end %>
-  <div class="form_section" data-controller="task">
+  <div class="form_section">
     <div>
       <%= f.label :name, t("task.name"), class:"form-label form_title"  %>
       <%= f.text_field :name, id: "task_name", class: "form-control" %>
@@ -31,8 +31,9 @@
       <%= f.label :priority, t("task.priority"), class:"form-label form_title"  %>
       <%= f.select :priority, Task.priorities.keys, {:include_blank => true}, id: "task_priority", class: "form-control" %>
     </div>
-    <div>
-      <%= f.select :tag_items, Tag.order(:name),{:include_hidden => false}, {:multiple => true, :class => "form-control"} %>
+    <div data-controller="task">
+    <%= f.label :priority, t("tag"), class:"form-label form_title"  %>
+      <%= f.select :tag_items, @tags,{:include_hidden => false}, {:multiple => true, :class => "form-control"} %>
     </div>
     <div>
       <%= f.submit t("button.submit"), class: "btn btn-secondary" %>
