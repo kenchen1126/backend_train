@@ -67,6 +67,8 @@
     delete_confirm: 確定要刪除此使用者嗎?
     no_authority: 權限不足  
     switch_authority_confirm: 確定要切換權限?
+    switch_complete: 切換完成
+    last_admin: 只剩下一名管理者!
 
 
   session:

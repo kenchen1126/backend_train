@@ -65,6 +65,8 @@ en:
     delete_confirm: Are you sure to delete this user?
     no_authority: Insufficient permission
     switch_authority_confirm: Are you sure to switch authority?
+    switch_complete: Switch complete!
+    last_admin: There is only one admin!
 
   session:
     login: Login

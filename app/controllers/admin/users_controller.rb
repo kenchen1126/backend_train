@@ -40,6 +40,7 @@ class Admin::UsersController < ApplicationController
       flash[:notice] = I18n.t("user.delete_success")
     else
       flash[:notice] = I18n.t("user.delete_failed")
+      flash[:notice] = @user.errors[:base].join if @user.errors[:base]
     end
     redirect_to admin_users_path
   end
@@ -50,7 +51,8 @@ class Admin::UsersController < ApplicationController
     else
       @user.authority = "admin"
     end
-    @user.save!
+    @user.save
+    flash[:notice] = I18n.t("user.switch_complete")
     redirect_to admin_users_path
   end
 
