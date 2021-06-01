@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def admin_user?
+    @current_user.authority == "admin"
+  end
+
+  def check_authority
+    redirect_to tasks_path, notice: I18n.t("user.no_authority") if !admin_user?
+  end
+
 end
