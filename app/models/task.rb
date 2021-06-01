@@ -6,5 +6,8 @@ class Task < ApplicationRecord
 
   paginates_per 30
 
+  has_many :taggings
+  has_many :tags, through: :taggings
+  
   belongs_to :user
 end
