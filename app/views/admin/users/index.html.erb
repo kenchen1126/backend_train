@@ -1,0 +1,35 @@
+
+<%= link_to t("user.create_user"), new_admin_user_path, class: "new-link", class: "new-link btn btn-primary" %>
+<table class="table table-striped">
+  <thead>
+    <td><%= t("user.name") %></td>
+    <td><%= t("user.email") %></td>
+    <td><%= t("user.created_at") %></td>
+    <td><%= t("user.tasks_count") %></td>
+    <td></td>
+  </thead>
+  <tbody>
+    <% @users.each do |user|%>
+      <tr id=<%= user.id %>>
+        <td>
+          <%= link_to user.name, admin_user_path(user) %>
+        </td>
+        <td>
+          <%= user.email %>
+        </td>
+        <td>
+          <%= user.created_at %>
+        </td>
+        <td>
+          <%= user.tasks.count %>
+        </td>
+        <td>
+          <%= link_to t("user.edit_user"), edit_admin_user_path(user) %>
+          <%= link_to t("user.delete_user"), admin_user_path(user), data: {method: "DELETE", confirm: t("user.delete_confirm")} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @users %>

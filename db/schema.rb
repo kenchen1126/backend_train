@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 2021_05_31_080951) do
     t.datetime "end_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_tasks_on_name"
+    t.bigint "user_id", null: false
     t.index ["priority"], name: "index_tasks_on_priority"
-    t.index ["status"], name: "index_tasks_on_status"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

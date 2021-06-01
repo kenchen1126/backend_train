@@ -1,0 +1,54 @@
+<div class="container">
+  <table class="table table-borderless table-hover w-auto">
+    <tr>
+      <th><%= t("user.name") %></th>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <th><%= t("user.email") %></th> 
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th><%= t("user.tasks_count") %></th> 
+      <td><%= @user.tasks.count %></td>
+    </tr>
+  </table> 
+  <table class="table table-hover ">
+    <thead class="table-warning">
+      <tr>
+        <th scope="col"><%= t("task.name") %></th>
+        <th scope="col">
+          <%= sort_link(@q, :priority, t("task.priority"), default_order: :desc) %>
+        </th>
+        <th scope="col">
+          <%= sort_link(@q, :status, t("task.status"), default_order: :desc) %>
+        </th>
+        <th scope="col">
+          <%= sort_link(@q, :start_at, t("task.start_at"), default_order: :desc) %>
+        </th>
+        <th scope="col">
+          <%= sort_link(@q, :created_at, t("task.created_at"), default_order: :desc) %>
+        </th>
+        <th scope="col">
+          <%= sort_link(@q, :end_at, t("task.end_at"), default_order: :desc) %>
+        </th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <div class="task_section">
+      <% @tasks.each do |task| %>
+        <tbody>
+          <tr>
+          <td><%= link_to task.name, task_path(task.id) %></td>
+          <td><%= task.priority %></td>
+          <td><%= task.status %></td>
+          <td><%= task.start_at.strftime("%B %d, %Y") if task.start_at.present?%></td>
+          <td><%= task.created_at.strftime("%B %d, %Y") %></td>
+          <td><%= task.end_at.strftime("%B %d, %Y") if task.end_at.present?%></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </div>
+  </table>
+  <%= paginate @tasks %>
+</div>
