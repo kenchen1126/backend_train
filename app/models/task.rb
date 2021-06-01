@@ -8,6 +8,16 @@ class Task < ApplicationRecord
 
   has_many :taggings
   has_many :tags, through: :taggings
-  
+
   belongs_to :user
+
+  def tag_items
+    tags.map(&:name)
+  end
+
+  def tag_items=(names)
+    self.tags = names.map{|item|
+      Tag.where(name: item.strip).first_or_create! unless item.blank?}
+  end
+
 end
