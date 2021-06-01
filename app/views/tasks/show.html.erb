@@ -24,13 +24,5 @@
       <th><%= t("task.priority") %></th>
       <td><%= @task.priority %></td>
     </tr>
-    <tr>
-      <th><%= t("tag") %></th>
-      <td>
-        <% @task.tags.each do |tag| %>
-          <%= tag.name %>
-        <% end %>
-      </td>  
-    </tr>
   </table> 
 </div>
