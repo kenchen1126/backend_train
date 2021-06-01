@@ -56,7 +56,10 @@ en:
     name: Name
     email: Email
     password: Password
-  
+    tasks_count: Tasks count
+    created_at: Create at
+    delete_confirm: Are you sure to delete this user?
+
   session:
     login: Login
     logout: Logout
@@ -74,3 +77,5 @@ en:
       previous: Previous
       next: Next
       truncate: ...
+  
+    admin_page: Admin page
