@@ -49,7 +49,7 @@ en:
     edit_user: Edit
     edit_success: Edit user successfully
     edit_failed: Failed to edit user
-    delete_task: Destroy
+    delete_user: Destroy
     delete_success: User deleted
     delete_failed: Failed to delete user
     #欄位

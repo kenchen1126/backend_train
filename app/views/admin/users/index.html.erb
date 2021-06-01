@@ -10,9 +10,9 @@
   </thead>
   <tbody>
     <% @users.each do |user|%>
-      <tr>
+      <tr id=<%= user.id %>>
         <td>
-          <%= user.name %>
+          <%= link_to user.name, admin_user_path(user) %>
         </td>
         <td>
           <%= user.email %>
@@ -24,9 +24,8 @@
           <%= user.tasks.count %>
         </td>
         <td>
-          <%= link_to t("show"), admin_user_path(user) %>
-          <%= link_to t("edit"), edit_admin_user_path(user) %>
-          <%= link_to t("delete"), admin_user_path(user), data: {method: "DELETE", confirm: t("user.delete_confirm")} %>
+          <%= link_to t("user.edit_user"), edit_admin_user_path(user) %>
+          <%= link_to t("user.delete_user"), admin_user_path(user), data: {method: "DELETE", confirm: t("user.delete_confirm")} %>
         </td>
       </tr>
     <% end %>

@@ -51,7 +51,7 @@
     edit_user: 修改
     edit_success: 成功修改
     edit_failed: 修改失敗
-    delete_task: 刪除
+    delete_user: 刪除
     delete_success: 使用者已刪除
     delete_failed: 使用者刪除失敗
     #欄位
