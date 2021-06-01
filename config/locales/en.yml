@@ -59,7 +59,9 @@ en:
     password: Password
     tasks_count: Tasks count
     created_at: Create at
+    #提示
     delete_confirm: Are you sure to delete this user?
+    no_authority: Insufficient permission
 
   session:
     login: Login

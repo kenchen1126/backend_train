@@ -61,7 +61,9 @@
     password: 密碼
     tasks_count: 任務數量
     created_at: 建立時間
+    #提示
     delete_confirm: 確定要刪除此使用者嗎?
+    no_authority: 權限不足
 
   session:
     login: 登入
@@ -82,3 +84,4 @@
       truncate: ...
 
   admin_page: 管理頁面
+
