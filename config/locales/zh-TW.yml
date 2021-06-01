@@ -41,7 +41,9 @@
     pending: 待辦
     in_progress: 進行中
     done: 完成
-  
+
+  tag: 標籤
+
   user:
     #CRUD
     create_user: 新增使用者  
