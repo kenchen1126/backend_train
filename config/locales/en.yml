@@ -89,3 +89,8 @@ en:
       truncate: ...
   
     admin_page: Admin page
+
+  error:
+    page_not_found: The page you were looking for doesn't exist.
+    404_reason: You may have mistyped the address or the page may have moved.
+    dev_alert: If you are the application owner check the logs for more information.

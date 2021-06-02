@@ -72,7 +72,6 @@
     switch_complete: 切換完成
     last_admin: 只剩下一名管理者!
 
-
   session:
     login: 登入
     logout: 登出
@@ -93,3 +92,7 @@
 
   admin_page: 管理頁面
 
+  error:
+    page_not_found: 頁面不存在
+    404_reason: 您可能輸入錯誤的地址或頁面可能已移動
+    dev_alert: 如果您是應用程序所有者，請查看log以獲取更多資訊。
