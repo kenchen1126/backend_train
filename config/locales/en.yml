@@ -39,6 +39,8 @@ en:
     pending: Pending
     in_progress: In progress
     done: Done 
+
+  tag: Tag
     
   user:
     # CRUD
