@@ -9,13 +9,21 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "controllers"
 import "@fortawesome/fontawesome-free/css/all.css"
-
+import $ from 'jquery'
+import "select2/dist/css/select2.min.css";
+import "select2/dist/js/select2.full.min.js";
 require("styles");
 require("jquery");
 require("bootstrap");
 
-
-
+window.$ = $
+$(window).on('turbolinks:load', function(){
+  $('.tag_select').select2({
+      tags: true,
+      tokenSeparators: [',', ' ']
+    }
+    );
+})
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
