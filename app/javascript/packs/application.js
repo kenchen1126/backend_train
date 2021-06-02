@@ -18,7 +18,7 @@ require("bootstrap");
 
 window.$ = $
 $(window).on('turbolinks:load', function(){
-  $('select').select2({
+  $('.tag_select').select2({
       tags: true,
       tokenSeparators: [',', ' ']
     }

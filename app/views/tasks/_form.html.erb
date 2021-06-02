@@ -32,8 +32,8 @@
       <%= f.select :priority, Task.priorities.keys, {:include_blank => true}, id: "task_priority", class: "form-control" %>
     </div>
     <div data-controller="task">
-    <%= f.label :priority, t("tag"), class:"form-label form_title"  %>
-      <%= f.select :tag_items, @tags,{:include_hidden => false}, {:multiple => true, :class => "form-control"} %>
+      <%= f.label :priority, t("tag"), class:"form-label form_title"  %>
+      <%= f.select :tag_items, @tags,{:include_hidden => false}, {:multiple => true, :class => "form-control tag_select"} %>
     </div>
     <div>
       <%= f.submit t("button.submit"), class: "btn btn-secondary" %>
